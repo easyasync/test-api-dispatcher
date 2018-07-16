@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -34,7 +35,7 @@ type Message struct {
 
 func handleMessage(c *gin.Context) {
 	message := Message{}
-
+	log.Println("DEBUG: received message ", message)
 	err := c.ShouldBind(&message)
 
 	if err != nil {
