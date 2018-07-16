@@ -1,0 +1,73 @@
+{
+	"id": "66b6e6d4-0777-a7a5-10b8-04296b1c5746",
+	"name": "Dispatcher_Test_API",
+	"description": "",
+	"order": [
+		"1ca967ed-ec34-2d2a-5523-a047913c3c61"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1531716478649,
+	"owner": "837563",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "1ca967ed-ec34-2d2a-5523-a047913c3c61",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{URL}}/test/api/hello",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17e83009-d1d0-4fa9-9e99-c458ce64ea3f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3fa6bc69-c0fa-4279-b17b-647357932226",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"SOURCE1\", \"Some\"+Math.random().toString(36).substring(7));"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1531716527212,
+			"name": "Dispatch Message",
+			"description": "",
+			"collectionId": "66b6e6d4-0777-a7a5-10b8-04296b1c5746",
+			"responses": [],
+			"preRequestScript": "pm.environment.set(\"SOURCE1\", \"Some\"+Math.random().toString(36).substring(7));",
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\n\t\"message\": \"{\\\"hello\\\": \\\"wordl\\\"}\"\n}"
+		}
+	]
+}
