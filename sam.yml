@@ -122,7 +122,7 @@ Resources:
   Dispatcher:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub Dispatcher_${Environment}
+      FunctionName: !Sub DispatcherTest_${Environment}
       Handler: main
       CodeUri: main.zip
       Runtime: go1.x
