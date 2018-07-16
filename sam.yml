@@ -151,8 +151,8 @@ Resources:
       Description: Most recent published version
 
 Outputs:
-  SampleGinApi:
+  APIUrl:
     Description: URL for application
     Value: !Sub 'https://${APIGateway}.execute-api.${AWS::Region}.amazonaws.com/${Environment}'
     Export:
-      Name: !Sub ${Environment}-Dispather
+      Name: !Sub ${Environment}-DispatcherTestAPi
