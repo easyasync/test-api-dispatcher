@@ -23,7 +23,7 @@ jobs:
     - run: 
         name: Integration tests
         command: |
-          cd integration && ./setup.sh ${STACK_NAME} && newman run ${COLLECTION}
+          cd integration && ./setup.sh ${STACK_NAME} ${COLLECTION} && newman run ${COLLECTION}
     - save_cache:
         key: v1-pkg-cache
         paths:
