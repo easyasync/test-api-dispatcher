@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /go/src/github.com/larse514/test-api-dispatcher
+    working_directory: /go/src/github.com/easyasync/test-api-dispatcher
     docker:
       - image: larse514/circleci-golang:latest
     environment:

@@ -35,8 +35,8 @@ type Message struct {
 
 func handleMessage(c *gin.Context) {
 	message := Message{}
-	log.Println("DEBUG: received message ", message)
 	err := c.ShouldBind(&message)
+	log.Println("DEBUG: received message ", message)
 
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
